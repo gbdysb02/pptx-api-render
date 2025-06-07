@@ -3,7 +3,9 @@ from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN
 
 def generate_pptx(companies, output_path="Company_Summary_Deck_Full.pptx"):
+    print("📥 Starting to load template.pptx...")
     prs = Presentation("template.pptx")  # use uploaded custom template
+    print("✅ template.pptx loaded successfully.")
     layout = prs.slide_layouts[0]  # or choose a specific layout index as needed
 
     headers = ["Company", "Website", "Overview", "Revenue (PLNm)", "EBIT (PLNm)", "Shareholders"]
@@ -39,5 +41,7 @@ def generate_pptx(companies, output_path="Company_Summary_Deck_Full.pptx"):
             table.cell(row_idx, 4).text = str(company.get("EBIT", ""))
             table.cell(row_idx, 5).text = company.get("Shareholders", "")
 
+    print(f"💾 Saving presentation to {output_path}...")
     prs.save(output_path)
+    print("✅ Presentation saved.")
     return output_path
