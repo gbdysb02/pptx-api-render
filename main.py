@@ -13,6 +13,7 @@ def generate():
             return {"error": "No companies provided"}, 400
 
         output_file = "Company_Summary_Deck_Full.pptx"
+        print("Received POST with companies:", companies)
         generate_pptx(companies, output_file)
         return send_file(output_file, as_attachment=True)
     except Exception as e:
