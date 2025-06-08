@@ -38,7 +38,7 @@ def generate_pptx(companies, output_path="Company_Summary_Deck_Full.pptx"):
             table.cell(row_idx, 1).text = company.get("website", "")
             table.cell(row_idx, 2).text = company.get("overview", "")
             table.cell(row_idx, 3).text = str(company.get("revenue", ""))
-            table.cell(row_idx, 4).text = str(company.get("eBIT", ""))
+            table.cell(row_idx, 4).text = str(company.get("ebit", ""))
             table.cell(row_idx, 5).text = company.get("shareholders", "")
 
     print(f"💾 Saving presentation to {output_path}...")
