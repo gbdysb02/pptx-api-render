@@ -34,12 +34,12 @@ def generate_pptx(companies, output_path="Company_Summary_Deck_Full.pptx"):
             cell.text_frame.paragraphs[0].font.bold = True
 
         for row_idx, company in enumerate(batch, start=1):
-            table.cell(row_idx, 0).text = company.get("Company Name", "")
-            table.cell(row_idx, 1).text = company.get("Website", "")
-            table.cell(row_idx, 2).text = company.get("Overview", "")
-            table.cell(row_idx, 3).text = str(company.get("Revenue", ""))
-            table.cell(row_idx, 4).text = str(company.get("EBIT", ""))
-            table.cell(row_idx, 5).text = company.get("Shareholders", "")
+            table.cell(row_idx, 0).text = company.get("company", "")
+            table.cell(row_idx, 1).text = company.get("website", "")
+            table.cell(row_idx, 2).text = company.get("overview", "")
+            table.cell(row_idx, 3).text = str(company.get("revenue", ""))
+            table.cell(row_idx, 4).text = str(company.get("eBIT", ""))
+            table.cell(row_idx, 5).text = company.get("shareholders", "")
 
     print(f"💾 Saving presentation to {output_path}...")
     prs.save(output_path)
