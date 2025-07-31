@@ -30,7 +30,7 @@ def generate_pptx(companies, output_path="Company_Summary_Deck_Full.pptx"):
         for col, header in enumerate(headers):
             cell = table.cell(0, col)
             cell.text = header
-            cell.text_frame.paragraphs[0].font.size = Pt(12)
+            cell.text_frame.paragraphs[0].font.size = Pt(8)
             cell.text_frame.paragraphs[0].font.bold = True
 
         for row_idx, company in enumerate(batch, start=1):
